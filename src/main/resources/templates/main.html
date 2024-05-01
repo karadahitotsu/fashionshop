@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html xlmns:th="http://www.thymeleaf.org">
+<head>
+    <title>main page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/catalogpage.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Mirza:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body class="h-100 text-center bg-white">
+<header>
+    <div class="header">
+        <a class="mirza-regular font-medium">login</a>
+        <a class="lavishly-yours-regular font-64" href="/">videserein</a>
+        <a class="mirza-regular font-medium">cart</a>
+</div>
+
+</header>
+<div class="product-div" >
+    <a href="/y2k">
+        <img class="product-img" th:src="@{/img/girl.png}" alt="">
+    </a>
+    <a href="/y2k">
+        <img class="product-img" th:src="@{/img/girl2.png}" alt="">
+    </a>
+    <a href="/y2k">
+        <img class="product-img" th:src="@{/img/girl3.png}" alt="">
+    </a>
+
+</div>
+<div class="line-div">
+    <hr class="line">
+    <a href="/y2k">
+    <span class="line-logo lavishly-yours-regular font-64" style="">y2k</span>
+    </a>
+</div>
+<div class="product-div">
+    <a href="/opiumcore">
+        <img class="product-img" th:src="@{/img/boy.png}" alt="">
+    </a>
+    <a href="/opiumcore">
+        <img class="product-img" th:src="@{/img/boy2.png}" alt="">
+    </a>
+    <a href="/opiumcore">
+        <img class="product-img" th:src="@{/img/boy3.png}" alt="">
+    </a>
+
+</div>
+<div class="line-div">
+    <hr class="line">
+    <a href="/opiumcore">
+    <span class="line-logo lavishly-yours-regular font-64" style="">opiumcore</span>
+    </a>
+</div>
+<footer>
+    <div class="footer">
+        <div class="font-medium">
+            <a class="mirza-regular font-medium" href="">about us</a>
+            |
+            <a class="mirza-regular font-medium" href="">contacts</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
