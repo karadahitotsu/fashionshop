@@ -13,12 +13,13 @@ public class Products {
 
     private String name;
 
-    private String description;
+
 
     private Integer price;
 
     private String imagePath;
     private String category;
+    private String description;
     private List<String> sizes;
     private String collection;
 
@@ -38,13 +39,6 @@ public class Products {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public Integer getPrice() {
         return price;
@@ -84,5 +78,13 @@ public class Products {
 
     public void setCollection(String collection) {
         this.collection = collection;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

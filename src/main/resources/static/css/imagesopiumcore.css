@@ -1,0 +1,36 @@
+.abs{
+position:absolute;
+}
+.opa-25{
+opacity:0.25;
+}
+.opa-25{
+opacity:0.25;
+z-index: -1;
+}
+.opa-50{
+opacity:0.5;
+z-index: -1;
+}
+.star1{
+top: -239px;
+    left: -146px;
+}
+.star2{
+top: -239px;
+    right: -146px;
+}
+.castle1{
+    top: 1148px;
+}
+.castle2{
+    top: 1148px;
+    right:0px;
+    transform: scaleX(-1);
+}
+.spare{
+top: 447px;
+    left: 37%;
+    width: 500px;
+    height: 1000px;
+}

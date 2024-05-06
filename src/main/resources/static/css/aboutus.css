@@ -1,0 +1,12 @@
+.textsize{
+font-size: 64px;
+}
+.flex-row{
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.perc{
+    width: 70%;
+}

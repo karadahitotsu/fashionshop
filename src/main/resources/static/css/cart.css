@@ -1,0 +1,9 @@
+.linknon{
+color: black;
+text-decoration: none;
+}
+.flexcolumn{
+display:flex;
+flex-direction:column;
+
+}

@@ -1,0 +1,19 @@
+.flex-column{
+display:flex;
+flex-direction:column;
+justify-content: space-evenly;
+align-items: center;
+
+}
+.flex-row{
+display:flex;
+flex-direction:row;
+justify-content: space-around;
+}
+.size{
+    margin-left: 10px;
+    font-size: 64px;
+}
+.textsize{
+font-size: 64px;
+}

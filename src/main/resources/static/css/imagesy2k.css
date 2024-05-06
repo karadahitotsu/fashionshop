@@ -1,0 +1,36 @@
+.abs{
+position:absolute;
+}
+.opa-25{
+opacity:0.25;
+}
+.opa-25{
+opacity:0.25;
+z-index: -1;
+}
+.opa-50{
+opacity:0.5;
+z-index: -1;
+}
+.spike1{
+    top: -62px;
+    left: -146px;
+}
+.spike2{
+    top: -62px;
+    right: -146px;
+}
+.spike3{
+    top: 1500px;
+    left: -146px;
+}
+.spike4{
+    top: 1500px;
+    right: -146px;
+}
+.butterfly{
+top: 447px;
+    left: 24%;
+    width: 1000px;
+    height: 1000px;
+}

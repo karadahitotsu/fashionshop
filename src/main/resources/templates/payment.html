@@ -4,9 +4,11 @@
     <title>main page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/payment.css}">
     <link rel="stylesheet" th:href="@{/css/catalogpage.css}">
-    <link rel="stylesheet" th:href="@{/css/imagesopiumcore.css}">
+    <link rel="stylesheet" th:href="@{/css/castle.css}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Mirza:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -20,28 +22,37 @@
     </div>
 
 </header>
-<div class="product-div" >
-    <div th:each="jean: ${jeans}">
-    <a th:href="@{'/product?productid='+${jean.id}}">
-        <img class="product-img" th:src="@{'/images/products/'+${jean.imagePath}}" alt="">
-    </a>
+
+<div class="flex-column">
+    <div>
+        <span class="textsizesmall mirza-regular">Payment method :</span>
+        <input class="textsizesmall mirza-regular" type="text">
+    </div>
+    <div>
+        <span class="textsizesmall mirza-regular">Card number : </span>
+        <input class="textsizesmall mirza-regular" type="text">
+    </div>
+    <div>
+        <span class="textsizesmall mirza-regular">Card validity period :</span>
+        <input class="textsizesmall mirza-regular" type="text">
+    </div>
+    <div>
+        <span class="textsizesmall mirza-regular">Cvv :</span>
+        <input class="textsizesmall mirza-regular" type="text">
+    </div>
+    <div>
+        <span class="textsizesmall mirza-regular">Delivery Address :</span>
+        <input class="textsizesmall mirza-regular" type="text">
+    </div>
+    <div>
+        <span class="textsizesmall mirza-regular">Email :</span>
+        <input class="textsizesmall mirza-regular" type="text">
+    </div>
+    <div>
+        <a class="textsizesmall mirza-regular" href="/finish">Place an order</a>
     </div>
 </div>
-<div class="line-div">
-    <hr class="line">
-        <span class="line-logo lavishly-yours-regular font-64" style="">jeans</span>
-</div>
-<div class="product-div" >
-    <div th:each="top: ${tops}">
-    <a th:href="@{'/product?productid='+${top.id}}">
-        <img class="product-img" th:src="@{'/images/products/'+${top.imagePath}}" alt="">
-    </a>
-    </div>
-</div>
-<div class="line-div">
-    <hr class="line">
-    <span class="line-logo lavishly-yours-regular font-64" style="">tops</span>
-</div>
+
 <footer>
     <div class="footer">
         <div class="font-medium">
@@ -51,12 +62,6 @@
         </div>
     </div>
 </footer>
-<img class=" abs opa-25 star1" th:src="@{/img/star.png}" alt="">
-<img class="abs opa-25 star2" th:src="@{/img/star.png}" alt="">
-<img class="abs opa-50 spare"  th:src="@{/img/spare.png}" alt="">
-<img class=" abs opa-25 castle1" th:src="@{/img/castle.png}" alt="">
-<img class="abs opa-25 castle2" th:src="@{/img/castle.png}" alt="">
-
 
 <script th:src="@{/js/iflogin.js}"></script>
 

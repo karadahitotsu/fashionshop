@@ -5,6 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" th:href="@{/css/header.css}">
     <link rel="stylesheet" th:href="@{/css/catalogpage.css}">
+    <link rel="stylesheet" th:href="@{/css/product.css}">
+    <link rel="stylesheet" th:href="@{/css/castle.css}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Mirza:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,22 +15,53 @@
 <body class="h-100 text-center bg-white">
 <header>
     <div class="header">
-        <a class="mirza-regular font-medium">login</a>
+        <a class="mirza-regular font-medium" href="/login">login</a>
         <a class="lavishly-yours-regular font-64" href="/">videserein</a>
-        <a class="mirza-regular font-medium">cart</a>
+        <a class="mirza-regular font-medium" id="carthref" href="/cart">cart</a>
     </div>
 
 </header>
 
+<div class="flex-row">
+    <div class="flex-column">
+        <img th:src="@{'/images/products/'+${product.imagePath}}">
+        <div>
+            <span class="textsize mirza-regular">Size :</span>
+
+            <span th:each="productsize: ${product.sizes}" class="mirza-regular size mergesize" th:text="${productsize}">S</span>
+
+        </div>
+    </div>
+    <div class="flex-column">
+        <div>
+            <span class="textsize mirza-regular">price:</span>
+            <span class="textsize mirza-regular" th:text="${product.price}"></span>
+            <span class="textsize mirza-regular">$</span>
+        </div>
+        <div>
+            <p class="textsize mirza-regular">About the product:</p>
+            <p class="textsize mirza-regular" th:text="${product.description}"></p>
+        </div>
+        <div>
+            <span th:attr="onclick=|addCart(${product.id})|" class="textsize mirza-regular">Add to cart<br></span>
+        </div>
+        <div>
+            <a class="textsize mirza-regular" href="/">Continue shopping</a>
+        </div>
+    </div>
+</div>
+
 <footer>
     <div class="footer">
         <div class="font-medium">
-            <a class="mirza-regular font-medium" href="">about us</a>
+            <a class="mirza-regular font-medium" href="/aboutus">about us</a>
             |
-            <a class="mirza-regular font-medium" href="">contacts</a>
+            <a class="mirza-regular font-medium" href="/contacts">contacts</a>
         </div>
     </div>
 </footer>
-
+<script th:src="@{/js/iflogin.js}"></script>
+<script th:src="@{/js/addcart.js}"></script>
+<script th:src="@{/js/productpage.js}"></script>
 </body>
 </html>

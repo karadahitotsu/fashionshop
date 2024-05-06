@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" th:href="@{/css/header.css}">
     <link rel="stylesheet" th:href="@{/css/catalogpage.css}">
+    <link rel="stylesheet" th:href="@{/css/imagesmain.css}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Mirza:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,10 +14,10 @@
 <body class="h-100 text-center bg-white">
 <header>
     <div class="header">
-        <a class="mirza-regular font-medium">login</a>
+        <a class="mirza-regular font-medium" href="/login">login</a>
         <a class="lavishly-yours-regular font-64" href="/">videserein</a>
-        <a class="mirza-regular font-medium">cart</a>
-</div>
+        <a class="mirza-regular font-medium" id="carthref" href="/cart">cart</a>
+    </div>
 
 </header>
 <div class="product-div" >
@@ -38,15 +39,21 @@
     </a>
 </div>
 <div class="product-div">
+    <div>
     <a href="/opiumcore">
         <img class="product-img" th:src="@{/img/boy.png}" alt="">
     </a>
+    </div>
+    <div>
     <a href="/opiumcore">
         <img class="product-img" th:src="@{/img/boy2.png}" alt="">
     </a>
+    </div>
+    <div>
     <a href="/opiumcore">
         <img class="product-img" th:src="@{/img/boy3.png}" alt="">
     </a>
+    </div>
 
 </div>
 <div class="line-div">
@@ -58,12 +65,20 @@
 <footer>
     <div class="footer">
         <div class="font-medium">
-            <a class="mirza-regular font-medium" href="">about us</a>
+            <a class="mirza-regular font-medium" href="/aboutus">about us</a>
             |
-            <a class="mirza-regular font-medium" href="">contacts</a>
+            <a class="mirza-regular font-medium" href="/contacts">contacts</a>
         </div>
     </div>
 </footer>
+<img class="abs opa-50 spike1" th:src="@{/img/spike.png}" alt="">
+<img class="abs opa-50 spike2" th:src="@{/img/spike.png}" alt="">
+<img class=" abs opa-50 spike3" th:src="@{/img/spike.png}" alt="">
+<img class=" abs opa-50 spike4" th:src="@{/img/spike.png}" alt="">
+<img class=" abs opa-25 castle1" th:src="@{/img/castle.png}" alt="">
+<img class="abs opa-25 castle2" th:src="@{/img/castle.png}" alt="">
+
+<script th:src="@{/js/iflogin.js}"></script>
 
 </body>
 </html>

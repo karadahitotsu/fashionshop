@@ -8,8 +8,8 @@ border-width: 2px;
 .line-logo{
 position: relative;
 top: -70px;
-background-color:
-white; padding: 0 10px;
+background-color:transparent;
+ padding: 0 10px;
 }
 .line-div{
 text-align: center;

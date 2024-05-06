@@ -1,0 +1,27 @@
+.flex-column{
+display:flex;
+flex-direction:column;
+justify-content: space-evenly;
+align-items: center;
+
+}
+.flex-row{
+display:flex;
+flex-direction:row;
+justify-content: space-around;
+}
+.size{
+    margin-left: 10px;
+    font-size: 64px;
+}
+.textsize{
+font-size: 64px;
+}
+.textsizesmall{
+font-size: 36px;
+}
+input {
+  border: none; /* Убираем все границы */
+  border-bottom: 1px solid black; /* Добавляем границу только снизу */
+  /* Можно также использовать другие цвета и стили границы, если нужно */
+}

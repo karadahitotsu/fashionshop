@@ -5,7 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" th:href="@{/css/header.css}">
     <link rel="stylesheet" th:href="@{/css/catalogpage.css}">
-    <link rel="stylesheet" th:href="@{/css/imagesopiumcore.css}">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/castle.css}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Mirza:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,28 +21,23 @@
     </div>
 
 </header>
-<div class="product-div" >
-    <div th:each="jean: ${jeans}">
-    <a th:href="@{'/product?productid='+${jean.id}}">
-        <img class="product-img" th:src="@{'/images/products/'+${jean.imagePath}}" alt="">
-    </a>
+
+<div class="flex-column mirza-regular">
+    <div class="flex-column nine">
+        <input class="six mirza-regular textsizesmall" id="email" type="text" placeholder="email">
+        <input class="six mirza-regular textsizesmall" id="password" type="password" placeholder="password">
+    </div>
+    <div class="flex-column nine ">
+
+        <button class="tree mirza-regular textsizesmall" onclick="SendLog()" >sign in</button>
+
+        <button class="tree mirza-regular textsizesmall" onclick="regpage()" >sign up</button>
+
+
     </div>
 </div>
-<div class="line-div">
-    <hr class="line">
-        <span class="line-logo lavishly-yours-regular font-64" style="">jeans</span>
-</div>
-<div class="product-div" >
-    <div th:each="top: ${tops}">
-    <a th:href="@{'/product?productid='+${top.id}}">
-        <img class="product-img" th:src="@{'/images/products/'+${top.imagePath}}" alt="">
-    </a>
-    </div>
-</div>
-<div class="line-div">
-    <hr class="line">
-    <span class="line-logo lavishly-yours-regular font-64" style="">tops</span>
-</div>
+
+
 <footer>
     <div class="footer">
         <div class="font-medium">
@@ -51,13 +47,13 @@
         </div>
     </div>
 </footer>
-<img class=" abs opa-25 star1" th:src="@{/img/star.png}" alt="">
-<img class="abs opa-25 star2" th:src="@{/img/star.png}" alt="">
-<img class="abs opa-50 spare"  th:src="@{/img/spare.png}" alt="">
-<img class=" abs opa-25 castle1" th:src="@{/img/castle.png}" alt="">
-<img class="abs opa-25 castle2" th:src="@{/img/castle.png}" alt="">
 
-
+<script>
+    function regpage(){
+      window.location.href = "/registration";
+}
+</script>
+<script th:src="@{/js/login.js}"></script>
 <script th:src="@{/js/iflogin.js}"></script>
 
 </body>

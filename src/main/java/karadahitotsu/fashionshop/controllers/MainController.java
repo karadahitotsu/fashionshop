@@ -1,6 +1,9 @@
 package karadahitotsu.fashionshop.controllers;
 
+import karadahitotsu.fashionshop.Entity.Cart;
 import karadahitotsu.fashionshop.Entity.Products;
+import karadahitotsu.fashionshop.Entity.Users;
+import karadahitotsu.fashionshop.repository.CartRepository;
 import karadahitotsu.fashionshop.repository.ProductsRepository;
 import karadahitotsu.fashionshop.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +28,8 @@ public class MainController {
     ProductsRepository productsRepository;
     @Autowired
     UsersRepository usersRepository;
+    @Autowired
+    CartRepository cartRepository;
     @Autowired
     private Environment environment;
     @GetMapping("/")
@@ -52,6 +57,48 @@ public class MainController {
         Products product = productsRepository.getReferenceById(productid);
         model.addAttribute("product",product);
         return "product";
+    }
+    @GetMapping("/aboutus")
+    public String aboutus(){
+        return "aboutus";
+    }
+    @GetMapping("/admin")
+    public String admin(){
+        return "admin";
+    }
+    @GetMapping("/payment")
+    public String payment(){
+        return "payment";
+    }
+    @GetMapping("/finish")
+    public String finish(){
+        return "finish";
+    }
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+    @GetMapping("/registration")
+    public String registration(){
+        return "registration";
+    }
+    @GetMapping("/contacts")
+    public String contacts(){
+        return "contacts";
+    }
+    @GetMapping("/cart")
+    public String cart(@RequestParam(name="userid",required = true)Long userid,Model model){
+        //model.addAttribute("user",usersRepository.getReferenceById(userid));
+        Users user = usersRepository.getReferenceById(userid);
+        List <Cart> cart = cartRepository.findByUser(user);
+        Integer price = 0;
+        for (int i = 0;i<cart.size();i++){
+            price+=cart.get(i).getProduct().getPrice()*cart.get(i).getCount();
+        }
+        model.addAttribute("products",cart);
+        model.addAttribute("price",price);
+
+        return "cart";
     }
     @GetMapping("/images/{folder}/{filename}")
     public ResponseEntity<byte[]> getImage(@PathVariable String folder, @PathVariable String filename) throws IOException {
