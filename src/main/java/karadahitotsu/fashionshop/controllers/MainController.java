@@ -63,7 +63,9 @@ public class MainController {
         return "aboutus";
     }
     @GetMapping("/admin")
-    public String admin(){
+    public String admin(Model model){
+        List<Products>products = productsRepository.findAll();
+        model.addAttribute("products",products);
         return "admin";
     }
     @GetMapping("/payment")

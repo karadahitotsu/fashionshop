@@ -20,6 +20,7 @@
     </div>
 
 </header>
+<main>
 <div class="product-div" >
     <div th:each="jean: ${jeans}">
     <a th:href="@{'/product?productid='+${jean.id}}">
@@ -43,6 +44,7 @@
     <hr class="line">
     <span class="line-logo lavishly-yours-regular font-64" style="">tops</span>
 </div>
+</main>
 <footer>
     <div class="footer">
         <div class="font-medium">

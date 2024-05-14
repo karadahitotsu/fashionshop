@@ -24,6 +24,7 @@
     </div>
 
 </header>
+<main>
 <div class="cartwidth">
 <div th:each="product: ${products}" class=" mb-3">
     <div class="card-body">
@@ -32,7 +33,7 @@
                 <div>
                     <img
                             th:src="@{'/images/products/'+${product.product.imagePath}}"
-                            class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                            class="img-fluid rounded-3" alt="Shopping item" style="width: 150px;">
                 </div>
                 <div class="ms-3">
                     <h5 th:text="${product.product.name}"></h5>
@@ -56,7 +57,7 @@
     </div>
 </div>
 
-
+</main>
 
 <footer>
     <div class="footer">

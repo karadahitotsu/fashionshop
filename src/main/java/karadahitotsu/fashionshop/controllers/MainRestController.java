@@ -115,5 +115,15 @@ public class MainRestController {
             cartRepository.save(cart);
         }
     }
+    @PostMapping("api/product/delete")
+    public void deleteProduct(@RequestParam("id") Long productid){
+        Products product = productsRepository.getReferenceById(productid);
+        List<Cart> cart = cartRepository.findByProduct(product);
+        for (int i = 0; i<cart.size();i++){
+            cartRepository.delete(cart.get(i));
+        }
+        productsRepository.delete(product);
+
+    }
 
 }

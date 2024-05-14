@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" th:href="@{/css/header.css}">
-    <link rel="stylesheet" th:href="@{/css/catalogpage.css}">
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -21,6 +21,7 @@
     </div>
 
 </header>
+<main>
 <div class="container mt-5 d-flex justify-content-center">
     <div class="p-3">
         <div class="d-flex flex-column" style="height: 400px;">
@@ -46,7 +47,17 @@
     </div>
 </div>
 
+    <div class="product-div" >
+        <div class="product" th:each="product: ${products}">
+            <p th:text="${product.name}"></p>
+            <p th:text="${product.description}"></p>
+            <p th:text="${product.price}"></p>
+            <span th:attr="onclick=|deleteproduct(${product.id})|">delete product</span>
+        </div>
 
+    </div>
+
+</main>
 <footer>
     <div class="footer">
         <div class="font-medium">
@@ -58,6 +69,33 @@
 </footer>
 <script th:src="@{/js/addproduct.js}"></script>
 <script th:src="@{/js/iflogin.js}"></script>
+<script>
+     async function deleteproduct(id){
+    const formData = new FormData();
 
+          formData.append("id",id);
+
+
+          const response = await fetch("/api/product/delete", {
+                  method: "POST",
+                  body: formData,
+                })
+              .then(response => {
+                  // Check for successful response
+                  if (!response.ok) {
+                    throw new Error(`Error: ${response.statusText}`); // Handle non-2xx response
+                  }
+                  return response.json(); // Parse JSON response
+                })
+                .then(data => {
+
+
+                })
+                .catch(error => {
+
+
+                });
+    }
+</script>
 </body>
 </html>
