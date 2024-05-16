@@ -5,5 +5,11 @@ text-decoration: none;
 .flexcolumn{
 display:flex;
 flex-direction:column;
+align-items: center;
 
+}
+.btnlike{
+border: solid;
+    background: white;
+    width:500px
 }

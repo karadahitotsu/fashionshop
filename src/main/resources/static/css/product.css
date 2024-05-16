@@ -17,3 +17,10 @@ justify-content: space-around;
 .textsize{
 font-size: 64px;
 }
+.active{
+text-decoration: underline;
+}
+.btnlike{
+border: solid;
+    background: white;
+}
