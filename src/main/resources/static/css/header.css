@@ -57,6 +57,9 @@ body{
 
 overflow-x:hidden
 }
+.invisible{
+visibility: hidden;
+}
 
   a:link, a:visited {
     text-decoration: none;
